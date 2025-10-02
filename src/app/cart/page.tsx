@@ -1,10 +1,10 @@
 
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 
-const initialCart = [
-  // Пример товара в корзине
+const cart = [
   {
     id: 1,
     name: "Геймерская мышь",
@@ -15,8 +15,6 @@ const initialCart = [
 ];
 
 export default function CartPage() {
-  const [cart, setCart] = useState(initialCart);
-
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
@@ -39,7 +37,7 @@ export default function CartPage() {
         </div>
       )}
       <div className="mt-8 text-right font-gamer text-xl text-[#ff003c]">Итого: {total}₽</div>
-      <a href="/checkout" className="block mt-6 mx-auto w-fit px-8 py-3 rounded-xl font-gamer bg-[#ff003c] text-black text-lg font-bold shadow-[0_0_16px_#ff003c] transition-all duration-300 hover:bg-[#ff003c] hover:text-white hover:shadow-[0_0_32px_#ff003c]">Оформить заказ</a>
+      <Link href="/checkout" className="block mt-6 mx-auto w-fit px-8 py-3 rounded-xl font-gamer bg-[#ff003c] text-black text-lg font-bold shadow-[0_0_16px_#ff003c] transition-all duration-300 hover:bg-[#ff003c] hover:text-white hover:shadow-[0_0_32px_#ff003c]">Оформить заказ</Link>
     </div>
   );
 }

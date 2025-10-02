@@ -1,4 +1,6 @@
+
 import React from "react";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -8,9 +10,9 @@ export default function Header() {
         <span className="hidden sm:inline text-base text-gray-400 font-gamer">Геймерский магазин</span>
       </div>
       <nav className="flex gap-6">
-        <a href="/" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Главная</a>
-        <a href="/cart" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Корзина</a>
-        <a href="/admin" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Добавить товар</a>
+        <Link href="/" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Главная</Link>
+        <Link href="/cart" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Корзина</Link>
+        <Link href="/admin" className="font-gamer text-[#ff003c] hover:text-white transition-colors">Добавить товар</Link>
       </nav>
     </header>
   );
